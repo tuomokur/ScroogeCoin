@@ -1,6 +1,6 @@
 let searchDatesBtn = document.querySelector('#searchDates');
 let results = {};
-let dailyPrice = [];
+let dailyPrices = [];
 
 // function for searching with user inputted dates
 let getDates = function(){
@@ -21,49 +21,50 @@ let getDates = function(){
   .then(data => console.log(results))
 };
 
-// function for calcultaing longest bearish trend
-function bearish(price){
-  // return the longest bearish trend in days
 
+let price = function(){
   for (let index = 0; index < results.prices.length; index += 24) {
-    dailyPrice.push(results.prices[index][1]);
+    dailyPrices.push(results.prices[index][1]);
   }
-  console.log(dailyPrice)
+  console.log(dailyPrices);
 }
 
-// function findDecreaseSubArray(arr) {
-//   let startIndex = 0;
-//   let length = 1;
+let findDecreaseSubArray = function (price) {
+  
+  let startIndex = 0;
+  let length = 1;
 
-//   let longestSequence = {
-//     startIndex: 0,
-//     length: 1
-//   }
+  let longestSequence = {
+    startIndex: 0,
+    length: 1
+  }
 
-//   arr.forEach((element, index, arr) => {
-//     if (index === 0) return;
+  dailyPrices.forEach((element, index, dailyPrices) => {
+    if (index === 0) return;
 
-//     if (element < arr[index -1]) {
-//       length += 1;
-//     } else {      
-//       length = 1;
-//       startIndex = index;
-//     }
+    if (element < dailyPrices[index -1]) {
+      length += 1;
+    } else {      
+      length = 1;
+      startIndex = index;
+    }
 
-//     if (length > longestSequence.length) {
-//         longestSequence.length = length;
-//         longestSequence.startIndex = startIndex;
-//     }
+    if (length > longestSequence.length) {
+        longestSequence.length = length;
+        longestSequence.startIndex = startIndex;
+    }
+  })
+  console.log(longestSequence.length-1);
+  return longestSequence;
+}
 
-//   })
 
-//   return longestSequence;
-// }
-
-// console.log(findDecreaseSubArray(arr));
 
 searchDatesBtn.addEventListener('click', getDates);
-setTimeout(bearish, 9000);
+searchDatesBtn.addEventListener('click', price);
+searchDatesBtn.addEventListener('click', findDecreaseSubArray);
+// setTimeout(price, 5000);
+// setTimeout(findDecreaseSubArray, 9000);
 
 
 
