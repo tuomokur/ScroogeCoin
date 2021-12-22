@@ -27,10 +27,10 @@ let price = function(){
     dailyPrices.push(results.prices[index][1]);
   }
   console.log(dailyPrices);
+  return dailyPrices;
 }
 
-let findDecreaseSubArray = function (price) {
-  
+let findDecreaseSubArray = function () {
   let startIndex = 0;
   let length = 1;
 
@@ -55,16 +55,21 @@ let findDecreaseSubArray = function (price) {
     }
   })
   console.log(longestSequence.length-1);
-  return longestSequence;
+  // this value to webpage
+  return longestSequence.length-1;
 }
 
 
 
 searchDatesBtn.addEventListener('click', getDates);
-searchDatesBtn.addEventListener('click', price);
-searchDatesBtn.addEventListener('click', findDecreaseSubArray);
-// setTimeout(price, 5000);
-// setTimeout(findDecreaseSubArray, 9000);
+searchDatesBtn.addEventListener('click', function(){
+  setTimeout(price, 1000);
+});
+searchDatesBtn.addEventListener('click', function(){
+  setTimeout(findDecreaseSubArray, 1050);
+});
+
+
 
 
 
