@@ -1,6 +1,7 @@
 let searchDatesBtn = document.querySelector('#searchDates');
 let results = {};
 let dailyPrices = [];
+let volumes = [];
 
 // function for searching with user inputted dates
 let getDates = function(){
@@ -21,15 +22,16 @@ let getDates = function(){
   .then(data => console.log(results))
 };
 
-
+// get daily prices to new array
 let price = function(){
   for (let index = 0; index < results.prices.length; index += 24) {
     dailyPrices.push(results.prices[index][1]);
   }
-  console.log(dailyPrices);
+  // console.log(dailyPrices);
   return dailyPrices;
 }
 
+// Find longest bearish trend
 let findDecreaseSubArray = function () {
   let startIndex = 0;
   let length = 1;
@@ -60,13 +62,46 @@ let findDecreaseSubArray = function () {
 }
 
 
+// Get highest trading volume
+let volume = function(){
+  for (let index = 0; index < results.total_volumes.length; index++){
+    volumes.push(results.total_volumes[index][1]);
+  }
 
+  maxVolume = Math.max(...volumes);
+
+  let maxVolumeIndex = volumes.indexOf(maxVolume); 
+  let volumeDateUnix = results.total_volumes[maxVolumeIndex][0];
+
+  //convert time back to human format
+  volumeDateUnix * 1000;
+  let volumeDateObject = new Date(volumeDateUnix);
+  let volumeDateReal = volumeDateObject.toLocaleString()
+
+
+  console.log(maxVolume);
+  console.log(volumeDateReal);
+} 
+
+
+//Buy low! Sell high!
+let buySell = function (){
+  
+}
+
+
+
+
+// function calls and event listeners
 searchDatesBtn.addEventListener('click', getDates);
 searchDatesBtn.addEventListener('click', function(){
   setTimeout(price, 1000);
 });
 searchDatesBtn.addEventListener('click', function(){
   setTimeout(findDecreaseSubArray, 1050);
+});
+searchDatesBtn.addEventListener('click', function(){
+  setTimeout(volume, 1080);
 });
 
 
