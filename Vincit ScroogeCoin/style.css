@@ -25,6 +25,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+	background:rgba(17, 17, 17, 0.918);
 }
 ol, ul {
 	list-style: none;
@@ -48,16 +49,86 @@ table {
     width: 100vw;
 }
 .content-wrap {
-    background-color: rgba(204, 102, 30, 0.651);
+    background-color: rgb(20, 19, 21);
     width: 65vw;
-    margin: 20em auto;
+	height: auto;
+    margin: 10em auto;
     display: flex;
+	flex-direction: column;
     align-items: center;
     justify-content: center;
 }
-#coinTable {
-	border: 1px solid black;
-	height: 50vh;
-	width: 70%;
-	margin: 1em auto;
+.mainTitle {
+	color: rgba(204, 204, 43, 0.856);
+	font-size: 3em;
+	margin-top: 0.5em;
 }
+.mainArea {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 1em 0 1em 0;
+	gap: 5px;
+	width: 90%;
+	height: 50%;
+	/* background-color: blueviolet; */
+}
+.inputs {
+	width: 10em;
+	height: 15em;
+	display: flex;
+	flex-direction: column;	
+	align-items: center;
+	justify-content: center;
+	background-color: rgb(246, 245, 245);
+	border-radius: 8px;
+}
+.label {
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	font-weight: 400;
+	margin: 10px 0 10px 0;
+}
+.input {
+	margin-bottom: 8px;
+}
+#searchDates {
+	width: 90%;
+	height: 12%;
+	margin-top: 10px;
+	text-transform: uppercase;
+	border: none;
+	letter-spacing: 3px;
+	font-size: 11px;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+#searchDates:hover {
+	cursor: pointer;
+	color: white;
+	background-color: rgb(240, 78, 48);
+	border: none;
+}
+#coinTable {
+	background-color: rgba(255, 255, 255, 0.788);
+	border-radius: 8px;
+	width: 70%;
+	height: 15em;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	font-size: 13px;
+}
+#coinTable h3 {
+	margin-bottom: 1em;
+	font-size: 15px;
+	text-transform: uppercase;
+}
+#coinTable p {
+	margin-bottom: 12px;
+	font-size: 13px;
+}
+
+
+
