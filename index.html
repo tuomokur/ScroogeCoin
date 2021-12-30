@@ -14,35 +14,29 @@
 <body>
     <div class="full-width">
         <div class="content-wrap">
-            <!-- inputs -->
-            <input type="date" name="startDate" id="startDate">
-            <input type="date" name="endDate" id="endDate">
-            <input type="button" value="Search" id="searchDates">
+            <h1 class="mainTitle">Scrooge McDucks BitCoin Value Machine </h1>
+            <div class="mainArea">
+                <div class="inputs"> 
+                    <label class="label" for="startDate">Select a start date</label>
+                    <input class="input" type="date" name="startDate" id="startDate">
+    
+                    <label class="label" for="endDate">Select a end date</label>
+                    <input class="input" type="date" name="endDate" id="endDate">
+    
+                    <input type="button" value="Search" id="searchDates">
+                </div>
+
+                <div id="coinTable">
+                    <h3>Results</h3>
+                    <p>The longest bearish trend of BitCoin was: <span id="bearishResult"></span> day(s)</p>
+
+                    <p>The highest trading volume was in: <span id="volumeResult"></span></p>
+
+                    <p>The best time to sell and buy BitCoin was in.... ¤"#%¤&%&=) error .../%¤#&(/</p>
+                </div>
+            </div>
         </div>
-
-        <div id="coinTable">
-                
-        </div>
-
-        <!-- Input results -->
-        <!-- <p>Longest bearish trend for these dates is: !VALUE! </p>
-        <p>Highest trading volume was in: !VALUE! </p>
-        <p>Best day for selling was in: !VALUE! and best day for buying was in : !VALUE! </p>
- -->
-
-
     </div>
-
-
-
-        <!-- A. How many days is the longest bearish (downward) trend within a given date range?
-
-        B. Which date within a given date range had the highest trading volume?
-
-        C. For a given date range, the best day for buying bitcoin, and the best day for selling the bought bitcoin? -->
-
-
-
 
 
     <script src="main.js"></script>
