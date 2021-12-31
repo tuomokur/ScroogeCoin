@@ -1,7 +1,13 @@
 # ScroogeCoin
 
-Works best in web-browsers on largerscreen Firefox or Chrome. Not made for mobile.
+Works best in web-browsers on large screen Firefox or Chrome. Not made for mobile.
 
 Pick start and end date and click search. Result appear on right.
-Best way to make new serah is to refresh site before new search.
+Best way to make a new search is to refresh the site before new search.
 
+For those who read the code:
+  Aware Not the best practises are:
+    - Global variables
+    - function calls with setTimeOut
+    - No memory handling
+    - 
