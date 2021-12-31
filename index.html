@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="stylesheet" href="style.css">
+    <title>Scrooge's BitCoin Value Machine</title>
+</head>
+<body>
+    <div class="full-width">
+        <div class="content-wrap">
+            <h1 class="mainTitle">Scrooge McDucks BitCoin Value Machine </h1>
+            <div class="mainArea">
+                <div class="inputs"> 
+                    <label class="label" for="startDate">Select a start date</label>
+                    <input class="input" type="date" name="startDate" id="startDate">
+    
+                    <label class="label" for="endDate">Select a end date</label>
+                    <input class="input" type="date" name="endDate" id="endDate">
+    
+                    <input type="button" value="Search" id="searchDates">
+                </div>
+
+                <div id="coinTable">
+                    <h3>Results</h3>
+                    <p>The longest bearish trend of BitCoin was: <span id="bearishResult"></span> day(s)</p>
+
+                    <p>The highest trading volume was in: <span id="volumeResult"></span></p>
+
+                    <p>The best time to sell and buy BitCoin was in.... ¤"#%¤&%&=) error .../%¤#&(/</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="main.js"></script>
+</body>
+</html>
